@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   
-  const [data, setData] = useState([]);
+const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const API_KEY = "b797c9a3524c4248bd761b0b1aaa6bae";
 
@@ -27,7 +27,6 @@ function App() {
         setError(error.message);
       });
   }, [apiUrl]);
-
 
   return (
     <Router>
