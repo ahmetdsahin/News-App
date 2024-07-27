@@ -8,30 +8,25 @@ function App() {
   
 const [data, setData] = useState([]);
   const [error, setError] = useState(null);
-  const API_KEY = process.env.NEXT_PUBLIC_API_KEY || "b797c9a3524c4248bd761b0b1aaa6bae";
+  const API_KEY = "b797c9a3524c4248bd761b0b1aaa6bae";
 
   const apiUrl = `https://newsapi.org/v2/everything?domains=aa.com.tr&apiKey=${API_KEY}`;
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(apiUrl);
+    fetch(apiUrl)
+      .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        const incomingData = await response.json();
-        setData(incomingData.articles);
-      } catch (error) {
+        return response.json();
+      })
+      .then((incomingData) => {
+        setData(incomingData.articles);  // genellikle veriler articles içinde gelir
+      })
+      .catch((error) => {
         setError(error.message);
-      }
-    };
-
-    fetchData();
+      });
   }, [apiUrl]);
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
 
   return (
     <Router>
