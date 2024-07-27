@@ -14,9 +14,12 @@ Responsive Website
 
 ## ScreenShots
 
-Desktop
+**Desktop**
+
 ![desktop](https://github.com/user-attachments/assets/d79ce3c7-aace-40d0-adc9-1fa888e79013)
 
-Phone
+
+**Phone**
+
 ![phone](https://github.com/user-attachments/assets/bc0a22fd-6125-4da3-b1d0-f49718d0f475)
 
